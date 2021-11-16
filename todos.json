@@ -1,6 +1,6 @@
 [
-  { "id": 1, "task": "sleep", "isCompleted": false },
-  { "id": 2, "task": "Code", "isCompleted": true },
-  { "id": 3, "task": "more coding", "isCompleted": false },
-  { "id": 4, "task": "Eat", "isCompleted": true }
+  { "id": 1, "task": "sleep", "isCompleted": false , "isDel": false },
+  { "id": 2, "task": "Code", "isCompleted": true, "isDel": false },
+  { "id": 3, "task": "more coding", "isCompleted": false, "isDel": false },
+  { "id": 4, "task": "Eat", "isCompleted": true, "isDel": false }
 ]
