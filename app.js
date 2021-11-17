@@ -19,6 +19,31 @@ fs.readFile("./todos.json", (err, data) => {
   }
 });
 
+
+
+//// post to add a task to the list
+app.post("/todos",(req,res)=>{
+    const newTask = {
+        id: todos.length +1,
+        task: req.body.task,
+        isCompleted: false,
+        isDel: false
+    }
+    todos.push(newTask);
+    fs.writeFile("./todos.json",JSON.stringify(todos), (err)=>{
+        if (err){
+            return err.message
+        } else {
+            res.status(200).json(todos)
+        }
+    })
+
+})
+
+
+
+
+
 /////// put function to make changes on data (update)
 app.put("/todos", (req,res)=>{
     const {id,task,isCompleted, isDel} = req.body
@@ -37,7 +62,7 @@ app.put("/todos", (req,res)=>{
         check = true;
     } })
     if (check){
-        fs.writeFile("./todos.json", (err,res)=>{
+        fs.writeFile("./todos.json", JSON.stringify(todos),(err)=>{
             if(err){
                 return err.message
             }
